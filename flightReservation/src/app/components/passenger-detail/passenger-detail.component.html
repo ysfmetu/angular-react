@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Complete Reservation</title>
+</head>
+<body>
+<h2>Rezervasyonu Tamamla:</h2>
+<h2>Uçuş Bilgileri:</h2>
+Havayolu Şirketi: {{flightData?.operatingAirlines}}<br/>
+Kalkış Yeri  : {{flightData?.departureCity}}<br/>
+Varış Yeri: {{flightData?.arrivalCity}}<br/>
+Uçuş Tarihi : {{flightData?.dateOfDeparture}}<br/>
+
+<h2>Yolcu Bilgileri:</h2>
+<form #passengerForm="ngForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+            <input type="text" name="passengerFirstName" placeholder="isim giriniz.." [(ngModel)]="reservation.passengerFirstName"/>
+        </div>
+        <div>
+         <input type="text" name="passengerLastName" placeholder="soyad giriniz.."[(ngModel)]="reservation.passengerLastName"/>
+        </div>
+        <div>
+          <input type="text" name="passengerEmail" placeholder="mail giriniz.."[(ngModel)]="reservation.passengerEmail"/>
+        </div>
+        <div>
+          <input type="text" name="passengerPhone" placeholder="telefon giriniz.." [(ngModel)]="reservation.passengerPhone"/>
+        </div>
+        <div>
+          <input type="text" name="cardNumber" placeholder="kart numarası giriniz.." [(ngModel)]="reservation.cardNumber"/>
+        </div>
+        <div>
+          <input type="text" name="expirationDate" placeholder="son kullanım tarihi giriniz.." [(ngModel)]="reservation.expirationDate"/>
+        </div>
+        <div>
+          <input type="text" name="securityCode" placeholder="güvenlik kodu giriniz.."[(ngModel)]="reservation.securityCode"/>
+        </div>
+
+
+        <input type="submit" value="Onayla" class="btn btn-success"/>
+      </div>
+</form>
+
+</body>
+</html>

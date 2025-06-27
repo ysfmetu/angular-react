@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Find Flights</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-9 text-left" >
+        <h2>Uçuş Bilgisi Bul:</h2>
+        <form #findFlightsForm="ngForm" (ngSubmit)="onSubmit()">
+          Kalkış: <input type="text" [(ngModel)]="criteria.from" name="from"/>
+          Varış: <input type="text" [(ngModel)]="criteria.to" name="to"/>
+          Uçuş Tarihi: <input type="text" [(ngModel)]="criteria.departureDate" name="departureDate"/>
+          <input type="submit" class="btn btn-success btn-block mt-3" value="kayıt ara" />
+        </form>
+      </div>
+      <div class="col-3">
+          <h2>Checkin</h2>
+          <button routerLink="/startCheckIn" class="btn btn-info btn-block ">Başla</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
+<router-outlet></router-outlet>

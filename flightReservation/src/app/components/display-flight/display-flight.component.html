@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Flights</title>
+</head>
+<body>
+<h2>Uçuşlar :</h2>
+<table class="table-bordered  table-sm m-2">
+  <tr>
+    <th>Havayolları</th>
+    <th>Kalkış Yeri</th>
+    <th>Varış Yeri</th>
+    <th>Uçuş Tarihi</th>
+  </tr>
+  <tr *ngFor="let flight of data">
+    <td>{{flight.operatingAirlines}}</td>
+    <td>{{flight.departureCity}}</td>
+    <td>{{flight.arrivalCity}}</td>
+    <td>{{flight.dateOfDeparture}}</td>
+    <td><button class="btn-sm btn badge-info" (click)='onSelect(flight.id)'>Seç</button></td>
+  </tr>
+</table>
+</body>
+</html>
